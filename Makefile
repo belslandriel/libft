@@ -6,7 +6,7 @@
 #    By: miclandr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 21:24:31 by miclandr          #+#    #+#              #
-#    Updated: 2024/10/15 04:29:23 by miclandr         ###   ########.fr        #
+#    Updated: 2024/12/10 17:29:03 by miclandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 CC = gcc 
 CCFLAGS = -Wall -Wextra -Werror 
 RM = rm -rf
+INC = libft.h
 
 
 MY_SOURCES =ft_isdigit.c\
@@ -59,7 +60,7 @@ $(NAME) : $(OBJS)
 
 all: $(NAME)
 
-%.o : %.c
+%.o : %.c $(INC)
 	$(CC) $(CCFLAGS) -c -o $@ $<
 clean:
 	$(RM) $(OBJS)
